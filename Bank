@@ -1,0 +1,39 @@
+balance = 0
+def deposit():
+    global balance
+    a=int(input("Enter the amount you want to deposit : "))
+    if a>=0:
+        balance = balance + a
+        print("Your balance is : ",balance)
+        Bank()
+    else:
+        print("Enter valid amount to deposit")
+        Bank()
+    
+def withdraw():
+    global balance
+    c=int(input("Enter the amount you want to withdraw : "))
+    if 0<=c<=balance:
+        balance = balance - c
+        print("Your balance is : ",balance)
+        Bank()
+    elif c>balance:
+        print("Insufficient balance : ")
+        Bank()
+    else:
+        print("Enter valid amount to be withdrawn ")
+        Bank()
+        
+        
+def Bank():
+    b=str(input("\n 1. Press D for deposit , \n 2. Press W for withdrawl , \n 3. Press E for exit \n"))
+    if b == 'D' or b=='d':
+        deposit()
+    elif b=='W' or b=='w':
+        withdraw()
+    elif b=='E' or b=='e':
+        exit()
+    else:
+        print("Invalid choice , try again")
+    
+Bank()

@@ -26,17 +26,17 @@ def  insertionSort(A):
         A[j+1]=key
     
 def shellSort(A):
-    n = len(A)
+    n=len(A)
     gap = n//2
-    for i in range(gap,n):
-        temp = A[i]
-        j=i
-        while j>=0 and A[j-gap]>temp:
-            A[j]=A[j-gap]
-            j-=gap
-        A[j]=temp
-    gap//=2
-    
+    while gap>0:
+        for i in range(gap,n):
+            temp=A[i]
+            j=i
+            while j>=gap and A[j-gap]>temp:
+                A[j]=A[j-gap]
+                j-=gap
+            A[j]=temp
+        gap//=2
 def top_five(A):
     
     print("Top five scores : ")
